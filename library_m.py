@@ -48,7 +48,7 @@ if __name__ == "__main__":
             centralLibrary.returnBook(student.returnBook())
         elif a == 4:
             print("Thanks for using Central Library. Have a great day!")
-            exit()
+            break
         else:
             print("Invalid choice!")
     
