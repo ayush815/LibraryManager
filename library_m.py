@@ -27,7 +27,7 @@ class student:
         return self.book
 
 if __name__ == "__main__":
-    centralLibrary = Library(["Algorothem", "Python", "Django", "Flask", "HTML"])
+    centralLibrary = Library(["Algorithm", "Python", "Django", "Flask", "HTML"])
     student = student()
     # centralLibrary.displayAvailableBooks()
     while(True):
@@ -39,16 +39,20 @@ if __name__ == "__main__":
         4. Exit the library
         '''
         print(welcomeMsg)
-        a = int(input("Enter a choise: "))
-        if a == 1:
-            centralLibrary.displayAvailableBooks()
-        elif a == 2:
-            centralLibrary.borrowBook(student.requestBook())
-        elif a == 3:
-            centralLibrary.returnBook(student.returnBook())
-        elif a == 4:
-            print("Thanks for using Central Library. Have a great day!")
-            break
-        else:
-            print("Invalid choice!")
+        a = input("Enter a choise: ")
+        try:
+            a = int(a)
+            if a == 1:
+                centralLibrary.displayAvailableBooks()
+            elif a == 2:
+                centralLibrary.borrowBook(student.requestBook())
+            elif a == 3:
+                centralLibrary.returnBook(student.returnBook())
+            elif a == 4:
+                print("Thanks for using Central Library. Have a great day!")
+                exit()
+            else:
+                print("Invalid choice!")
+        except Exception as e:
+            print(f"You entered a {e}")
     
